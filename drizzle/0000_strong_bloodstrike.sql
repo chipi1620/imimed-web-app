@@ -1,0 +1,22 @@
+CREATE TABLE `requests` (
+	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	`type` text NOT NULL,
+	`name` text NOT NULL,
+	`institution` text NOT NULL,
+	`email` text NOT NULL,
+	`phone` text NOT NULL,
+	`location` text,
+	`need` text,
+	`description` text NOT NULL,
+	`product` text,
+	`brand` text,
+	`model` text,
+	`category` text,
+	`serial` text,
+	`error_code` text,
+	`criticality` text,
+	`source_url` text,
+	`attachment_key` text,
+	`status` text DEFAULT 'nuevo' NOT NULL,
+	`created_at` integer NOT NULL
+);
