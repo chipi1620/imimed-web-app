@@ -68,7 +68,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <main id="contenido">
         <nav className="breadcrumbs shell" aria-label="Migas de pan"><Link href="/">Inicio</Link><span>/</span><Link href="/equipos">Equipos</Link><span>/</span><span>{product.name}</span></nav>
         <section className="product-hero shell">
-          <div className="product-gallery" style={{ backgroundImage: `linear-gradient(0deg,rgba(6,28,33,.42),transparent),url("${product.image}")` }}><span className="mono">Imagen de referencia · sustituible desde CMS</span></div>
+          <div className="product-gallery" style={{ backgroundImage: `linear-gradient(0deg,rgba(6,28,33,.42),transparent),url("${product.image}")` }}><span className="mono">Imagen del equipo · fuente del fabricante</span></div>
           <div className="product-summary">
             <p className="kicker">{product.category}</p>
             <p className="mono">{product.brand} · {product.model}</p>
@@ -77,6 +77,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <div className="product-status"><span>{product.condition}</span><span>{product.operation}</span><span>{product.availability}</span></div>
             <a className="button button-dark" href="#cotizar">Solicitar cotización <span>↗</span></a>
             <a className="whatsapp-link" href={`https://wa.me/529619297841?text=${encodeURIComponent(`Hola, estoy interesado en cotizar el equipo ${product.brand} ${product.model} que aparece en su página.`)}`}>Consultar por WhatsApp</a>
+            {product.sourceUrl && <a className="manufacturer-link" href={product.sourceUrl} target="_blank" rel="noreferrer">Consultar ficha oficial del fabricante ↗</a>}
           </div>
         </section>
         <section className="section"><div className="shell product-detail">

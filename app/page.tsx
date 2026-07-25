@@ -17,16 +17,8 @@ export function Logo() {
 
 export function Header() {
   return (
-    <>
-      <div className="utility-bar">
-        <div className="shell utility-inner">
-          <span>Atención a hospitales, clínicas y distribuidores</span>
-          <span className="utility-detail">Venta · renta · mantenimiento · integración</span>
-          <a href="tel:+529619297841">+52 961 929 7841</a>
-        </div>
-      </div>
-      <header className="site-header">
-        <div className="shell nav-wrap">
+    <header className="site-header">
+      <div className="shell nav-wrap">
           <Logo />
           <nav className="desktop-nav" aria-label="Navegación principal">
             <details className="nav-item">
@@ -68,18 +60,13 @@ export function Header() {
               <summary>Equipos</summary>
               <div className="mega-menu mega-equipment">
                 <div>
-                  <span className="eyebrow">Imagenología</span>
-                  <Link href="/equipos?categoria=rayos-x">Rayos X</Link>
-                  <Link href="/equipos?categoria=tomografia">Tomografía</Link>
-                  <Link href="/equipos?categoria=ultrasonido">Ultrasonido</Link>
-                  <Link href="/equipos?categoria=arcos-en-c">Arcos en C</Link>
-                </div>
-                <div>
-                  <span className="eyebrow">Áreas clínicas</span>
-                  <Link href="/equipos?categoria=anestesia">Anestesia</Link>
-                  <Link href="/equipos?categoria=monitoreo">Monitoreo</Link>
-                  <Link href="/equipos?categoria=quirofano">Quirófano</Link>
-                  <Link href="/equipos?categoria=esterilizacion">Esterilización</Link>
+                  <span className="eyebrow">Tipos de imagen</span>
+                  <Link href="/equipos#rayos-x">Rayos X</Link>
+                  <Link href="/equipos#tomografia">Tomografía</Link>
+                  <Link href="/equipos#resonancia">Resonancia</Link>
+                  <Link href="/equipos#ultrasonido">Ultrasonido</Link>
+                  <Link href="/equipos#arcos-en-c">Arcos en C</Link>
+                  <Link href="/equipos#mastografia">Mastografía</Link>
                 </div>
               </div>
             </details>
@@ -109,9 +96,8 @@ export function Header() {
               <Link href="/cotizacion">Solicitar cotización</Link>
             </nav>
           </details>
-        </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 }
 
@@ -173,28 +159,56 @@ const needs = [
   ["Reportar una falla", "/soporte"],
 ];
 
-const services = [
-  ["01", "Mantenimiento preventivo", "Detectar desgaste antes de que interrumpa la atención clínica.", "/servicios/mantenimiento-preventivo"],
-  ["02", "Diagnóstico y correctivo", "Aislar la causa real de una falla y documentar la intervención.", "/servicios/mantenimiento-correctivo"],
-  ["03", "Pólizas de mantenimiento", "Convertir atención reactiva en una cobertura técnica planificada.", "/polizas"],
-  ["04", "Instalación y puesta en marcha", "Recibir, verificar e iniciar operación con criterios de ingeniería.", "/servicios/instalacion"],
-  ["05", "Integración DICOM / PACS", "Conectar modalidades, visualización y archivo sin perder trazabilidad.", "/servicios/dicom-pacs"],
-  ["06", "Capacitación", "Transferir conocimiento operativo al personal clínico y técnico.", "/servicios/capacitacion"],
-];
-
 const categories = [
   "Rayos X",
   "Tomografía",
-  "Resonancia magnética",
+  "Resonancia",
   "Ultrasonido",
   "Arcos en C",
-  "Fluoroscopía",
-  "Hemodinamia",
   "Mastografía",
-  "Anestesia",
-  "Monitoreo",
-  "Quirófano",
-  "Detectores digitales",
+];
+
+const policies = [
+  {
+    eyebrow: "Póliza Básica",
+    title: "Preventiva",
+    features: [
+      ["2 mantenimientos preventivos anuales", true],
+      ["Certificado de calibración", true],
+      ["Soporte telefónico 8/5", true],
+      ["Refacciones incluidas", false],
+    ],
+  },
+  {
+    eyebrow: "Póliza Plus",
+    title: "Integral",
+    featured: true,
+    features: [
+      ["2 mantenimientos preventivos anuales", true],
+      ["Mantenimientos correctivos ilimitados", true],
+      ["Mano de obra incluida", true],
+      ["Soporte telefónico 24/7", true],
+    ],
+  },
+  {
+    eyebrow: "Póliza Total",
+    title: "Todo incluido",
+    features: [
+      ["Mantenimientos preventivos y correctivos", true],
+      ["Mano de obra y viáticos incluidos", true],
+      ["Refacciones originales incluidas", true],
+      ["Tiempo de respuesta garantizado menor a 24 h", true],
+    ],
+  },
+];
+
+const brands = [
+  { name: "Philips", image: "/media/brand-philips.svg", href: "https://www.philips.com/healthcare" },
+  { name: "GE HealthCare", image: "/media/brand-ge-healthcare.svg", href: "https://www.gehealthcare.com/" },
+  { name: "Mindray", image: "/media/brand-mindray.png", href: "https://www.mindray.com/", className: "brand-icon" },
+  { name: "SCHILLER", image: "/media/brand-schiller.svg", href: "https://www.schiller.ch/" },
+  { name: "Siemens Healthineers", image: "/media/brand-siemens-healthineers.jpg", href: "https://www.siemens-healthineers.com/", className: "brand-square-raster" },
+  { name: "Canon Medical", image: "/media/brand-canon-medical.svg", href: "https://global.medical.canon/" },
 ];
 
 export default function Home() {
@@ -245,6 +259,42 @@ export default function Home() {
           <p className="shell data-note">
             Los indicadores cuantitativos se publicarán únicamente con datos
             verificables.
+          </p>
+        </section>
+
+        <section className="section brand-section">
+          <div className="shell brand-heading">
+            <div>
+              <p className="kicker">Tecnología multimarcas</p>
+              <h2>Marcas con las que trabajamos.</h2>
+            </div>
+            <p>
+              Integramos, mantenemos y configuramos tecnología de fabricantes
+              reconocidos de acuerdo con la aplicación y la infraestructura de
+              cada institución.
+            </p>
+          </div>
+          <div className="shell brand-grid">
+            {brands.map((brand) => (
+              <a
+                className={`brand-card ${brand.className ?? ""}`}
+                href={brand.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Visitar el sitio de ${brand.name}`}
+                key={brand.name}
+              >
+                <span className="brand-visual">
+                  <img src={brand.image} alt={`Logo de ${brand.name}`} />
+                </span>
+                <strong>{brand.name}</strong>
+              </a>
+            ))}
+          </div>
+          <p className="shell brand-note">
+            Las marcas y logotipos pertenecen a sus respectivos titulares. La
+            disponibilidad y el alcance de servicio se confirman para cada
+            modelo y proyecto.
           </p>
         </section>
 
@@ -323,53 +373,48 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section services-overview">
-          <div className="shell editorial-grid">
-            <div className="sticky-intro">
-              <p className="kicker">Servicios</p>
-              <h2>El problema técnico importa más que la etiqueta del servicio.</h2>
+        <section className="section policy-comparison">
+          <div className="shell">
+            <div className="policy-heading">
+              <div>
+                <p className="kicker">Cobertura técnica</p>
+                <h2>Una póliza para cada nivel de operación.</h2>
+              </div>
               <p>
-                Cada intervención parte del estado operativo, la criticidad y
-                el contexto clínico del equipo.
+                Compare el alcance de cada cobertura. La configuración final se
+                ajusta al tipo, cantidad y criticidad de sus equipos.
               </p>
-              <Link className="inline-link" href="/servicios">
-                Ver alcance de servicios <Chevron />
-              </Link>
             </div>
-            <div className="service-list">
-              {services.map(([number, title, copy, href]) => (
-                <Link href={href} key={number}>
-                  <span className="mono">{number}</span>
-                  <div>
-                    <h3>{title}</h3>
-                    <p>{copy}</p>
-                  </div>
-                  <Chevron />
-                </Link>
+            <div className="policy-cards">
+              {policies.map((policy) => (
+                <article
+                  className={`policy-card${policy.featured ? " policy-card-featured" : ""}`}
+                  key={policy.title}
+                >
+                  {policy.featured && <span className="policy-badge">Más popular</span>}
+                  <p className="policy-label">{policy.eyebrow}</p>
+                  <h3>{policy.title}</h3>
+                  <ul>
+                    {policy.features.map(([feature, included]) => (
+                      <li className={included ? "" : "not-included"} key={feature}>
+                        <span aria-hidden="true">{included ? "✓" : "—"}</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    className={`button ${policy.featured ? "" : "button-dark"}`}
+                    href={`/cotizacion?poliza=${encodeURIComponent(policy.title.toLowerCase())}`}
+                  >
+                    Cotizar <Chevron />
+                  </Link>
+                </article>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section className="section policy-band">
-          <div className="shell policy-grid">
-            <div>
-              <p className="kicker light">Cobertura técnica</p>
-              <h2>Cobertura diseñada alrededor de su operación.</h2>
-              <p>
-                Defina preventivos, correctivos, prioridad, tiempo de respuesta
-                y refacciones sin zonas grises.
-              </p>
-              <Link className="button button-light" href="/polizas">
-                Configurar una póliza <Chevron />
-              </Link>
-            </div>
-            <div className="policy-matrix" aria-label="Resumen de pólizas">
-              <div className="matrix-head"><span>Nivel</span><span>Preventivos</span><span>Correctivos</span><span>Refacciones</span></div>
-              <div><strong>Preventiva</strong><span>Programados</span><span>—</span><span>—</span></div>
-              <div><strong>Integral</strong><span>Incluidos</span><span>Incluidos</span><span>Opcional</span></div>
-              <div><strong>Institucional</strong><span>Multiequipo</span><span>Priorizados</span><span>A medida</span></div>
-            </div>
+            <p className="policy-note">
+              La cobertura está sujeta a evaluación técnica, ubicación y
+              condiciones particulares de cada equipo.
+            </p>
           </div>
         </section>
 
@@ -380,7 +425,7 @@ export default function Home() {
           </div>
           <div className="shell category-grid">
             {categories.map((category, i) => (
-              <Link href={`/equipos?categoria=${encodeURIComponent(category.toLowerCase())}`} key={category}>
+              <Link href={`/equipos#${category.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, "-")}`} key={category}>
                 <span className="mono">{String(i + 1).padStart(2, "0")}</span>
                 <strong>{category}</strong>
                 <Chevron />

@@ -4,8 +4,8 @@ import { Catalog } from "./catalog";
 import { getPublicProducts } from "./product-source";
 
 export const metadata: Metadata = {
-  title: "Equipos médicos en México",
-  description: "Catálogo consultivo de equipos médicos para venta o renta, con instalación, capacitación y soporte técnico.",
+  title: "Equipos de imagenología en México",
+  description: "Equipos reales de Rayos X, tomografía, resonancia, ultrasonido, arcos en C y mastografía, con instalación y soporte técnico.",
   alternates: { canonical: "/equipos" },
 };
 
@@ -17,7 +17,7 @@ export default async function EquipmentPage() {
     <>
       <Header />
       <main id="contenido">
-        <section className="inner-hero catalog-hero"><div className="shell"><p className="kicker">Catálogo consultivo</p><h1>El equipo correcto depende de todo lo que lo rodea.</h1><p>Filtre una primera selección. Antes de cotizar confirmamos aplicación clínica, infraestructura, condición, accesorios y soporte requerido.</p></div></section>
+        <section className="inner-hero catalog-hero"><div className="shell"><p className="kicker">Equipos de imagenología</p><h1>Modalidades reales, configuradas para su operación.</h1><p>Explore equipos vigentes por tipo de imagen. Antes de cotizar confirmamos aplicación clínica, infraestructura, accesorios, disponibilidad y soporte requerido.</p></div></section>
         <section className="section catalog-section">
           <Catalog products={products} />
         </section>
