@@ -320,59 +320,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section pillars">
-          <div className="shell">
-            <p className="kicker light">Una relación, tres capacidades</p>
-            <h2 className="light-title">
-              Decisiones técnicas conectadas con la operación hospitalaria.
-            </h2>
-            <div className="pillar-grid">
-              <article>
-                <span className="pillar-number">01</span>
-                <h3>Mantener</h3>
-                <p>
-                  Prevención, diagnóstico y corrección para reducir
-                  interrupciones y sostener el desempeño del equipo.
-                </p>
-                <ul>
-                  <li>Preventivos y correctivos</li>
-                  <li>Pólizas y soporte técnico</li>
-                  <li>Refacciones y documentación</li>
-                </ul>
-                <Link href="/soluciones#mantener">Ver continuidad operativa <Chevron /></Link>
-              </article>
-              <article className="pillar-featured">
-                <span className="pillar-number">02</span>
-                <h3>Equipar</h3>
-                <p>
-                  Selección consultiva, venta o renta, instalación y
-                  capacitación alineadas a la aplicación clínica.
-                </p>
-                <ul>
-                  <li>Equipo nuevo y seminuevo</li>
-                  <li>Evaluación técnica</li>
-                  <li>Puesta en marcha</li>
-                </ul>
-                <Link href="/soluciones#equipar">Explorar equipamiento <Chevron /></Link>
-              </article>
-              <article>
-                <span className="pillar-number">03</span>
-                <h3>Integrar</h3>
-                <p>
-                  Modalidades, información clínica e infraestructura técnica
-                  funcionando como un sistema.
-                </p>
-                <ul>
-                  <li>DICOM y PACS</li>
-                  <li>Modernización tecnológica</li>
-                  <li>Ingeniería clínica</li>
-                </ul>
-                <Link href="/soluciones#integrar">Ver integración <Chevron /></Link>
-              </article>
-            </div>
-          </div>
-        </section>
-
         <section className="section policy-comparison">
           <div className="shell">
             <div className="policy-heading">
